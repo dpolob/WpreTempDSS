@@ -1,13 +1,7 @@
-from os import execv
-import time
-import datetime
-import utils
-
 from flask import Flask, jsonify, request
 from flask import Response, make_response
 
 import globals
-from utils import read_parameters, save_parameters, reset_parameters, save_errors
 from predictors.temp import temp_prediction
 
 from multiprocessing.dummy import Pool
