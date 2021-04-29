@@ -53,7 +53,7 @@ def post_runalg():
                 raise exceptions.error_result_exception(log=logger, value="[{}][/run_alg] rain_prediction throwed an error".format(globals.NAME))
             else:
                 #convey to MMT through DSS
-                pool.apply_async(send_mmt, (data, maxima, "irrigation", "ºC Max - " + str(minima) + " ºC Min", logger))
+                pool.apply_async(send_mmt, (data, maxima, "irrigation", "ºC Max " + str(minima) + " ºC Min", logger))
                 # Reply to DSS 
                 print(maxima, "ºC Max - " + str(minima) + " ºC Min")
                 logger.info("[{}][/run_alg] {} Reply to DSS. Algorithm started and info sent to MMT".format(globals.NAME, request.method))
